@@ -209,7 +209,7 @@ def save_result(res, filename, fieldnames):
 
 
 # %%
-root_path = 'category_2/cate_2_res'
+root_path = 'category_2/cate_2_res/'
 train_column_names = ['accuracy', 'f1-core', 'recall']  # 标题行的列名
 test_column_name = ['model', 'accuracy', 'f1-core', 'recall']
 save_result(train_res_rows, root_path + 'train_bert_2.csv', train_column_names)

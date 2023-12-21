@@ -145,8 +145,7 @@ criterion = torch.nn.CrossEntropyLoss()
 train_res_rows = []
 vali_res_rows = []
 test_res = []
-model_names = []
-loop = tqdm(range(50))
+loop = tqdm(range(40))
 for epoch in loop:
     all_preds_train = []
     all_labels_train = []
@@ -209,7 +208,7 @@ def save_result(res, filename, fieldnames):
 
 
 # %%
-root_path = 'category_7/cate_7_res'
+root_path = 'category_7/cate_7_res/'
 train_column_names = ['accuracy', 'f1-core', 'recall']  # 标题行的列名
 test_column_name = ['model', 'accuracy', 'f1-core', 'recall']
 save_result(train_res_rows, root_path + 'train_bert_7.csv', train_column_names)
@@ -217,11 +216,11 @@ save_result(vali_res_rows, root_path + 'vali_bert_7.csv', train_column_names)
 save_result(test_res, root_path + 'test_bert_7.csv', test_column_name)
 # %%
 
-# %%
-with open('roberta_test_result.csv', 'w', newline='', encoding='utf-8') as output_file:
-    fieldnames = ['model_pt_name', 'accuracy']  # 标题行的列名
-    csv_writer = csv.DictWriter(output_file, fieldnames=fieldnames)
-
-    # 写入标题行
-    csv_writer.writeheader()
-    csv_writer.writerows()
+# # %%
+# with open('roberta_test_result.csv', 'w', newline='', encoding='utf-8') as output_file:
+#     fieldnames = ['model_pt_name', 'accuracy']  # 标题行的列名
+#     csv_writer = csv.DictWriter(output_file, fieldnames=fieldnames)
+#
+#     # 写入标题行
+#     csv_writer.writeheader()
+#     csv_writer.writerows()
